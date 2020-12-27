@@ -1,9 +1,47 @@
+// Author: Shuvankar Sarkar
+// Date: 14-Jul-2020
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const q = urlParams.get('q')
+console.log(q);
+if(q===null)
+{
+  window.location.href = "?q=0";
+}
+
 const anagrams = [
-  [`Tom Marvolo Riddle`, `I am Lord Voldemort`],
-  [`Torchwood`, `Doctor Who`],
-  [`Vladimir Nabokov`, `Vivian Darkbloom`]
+  [`drop saws`, `password`],
+  [`round topic`, `production`],
+  [`ever sics`, `services`],
+  [`optical pain`, `application`],
+  [`isbn uses`, `business`],
+  [`easer swan`, `awareness`],
+  [`pelted venom`, `development`],
+  [`analise cot`, `escalation`],
+  [`france moper`, `performance`],
+  [`org ramp`, `program`],
+  [`arizona outhit`, `authorization`],
+  [`comic panel`, `compliance`],
+  [`eaten germ`, `agreement`],
+  [`dye liver`, `delivery`],
+  [`cry suite`, `security`],
+  [`action heat unit`, `authentication`],
+  [`green cyme`, `emergency`],
+  [`say snail`, `analysis`],
+  [`orientating`, `integration`],
+  [`pop larva`, `approval`],
+  [`fun tonic`, `function`],
+  [`its one`, `onsite`],
+  [`in servo`, `version`],
+  [`a bad seat`, `database`],
+  [`gear move`, `gameover`]
 ];
-const [W1, W2] = anagrams[Math.floor(Math.random() * anagrams.length)];
+
+if (q<0 || q>=anagrams.length)
+{
+  alert('Invalid index');
+}
+const [W1, W2] = anagrams[q];
 
 const wordContainer1 = $(`.w1`);
 const wordContainer2 = $(`.w2`);
@@ -90,3 +128,15 @@ function rearrange(w1, w2) {
 }
 
 showBtn.on('click', rearrange.bind(null, wordContainer1, wordContainer2));
+
+$("#prev").attr("onclick", "location.href='?q="+(parseInt(q)-1)+"'");
+$("#next").attr("onclick", "location.href='?q="+(parseInt(q)+1)+"'");
+
+if(q<=0) {
+  $('#prev').prop('disabled', true);
+
+}
+if(q>=anagrams.length-1) {
+  $('#next').prop('disabled', true);
+}
+

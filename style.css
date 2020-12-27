@@ -10,8 +10,8 @@ body {
 .container {
   flex: 0 0 auto;
   align-self: center;
-  width: 500px;
-  height: 500px;
+  width: 1000px;
+  height: 700px;
   background-color: #1f1f1f;
   margin: 0 auto;
   text-align: center;
@@ -35,7 +35,7 @@ body {
 }
 .w1,
 .w2 {
-  font-size: 4em;
+  font-size: 7em;
   position: relative;
 }
 .w1 {

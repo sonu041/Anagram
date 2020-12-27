@@ -1,11 +1,15 @@
+<!-- 
+Author: Shuvankar Sarkar
+Date: 14-Jul-2020
+-->
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Anagram animation</title>
-  <link rel="stylesheet" href="normalize.min.css">
+  <title>Anagram</title>
+  <link rel="stylesheet" href="./normalize.min.css">
 <link rel="stylesheet" href="./style.css">
-<script src="prefixfree.min.js"></script>
+<script src="./prefixfree.min.js"></script>
 
 </head>
 <body>
@@ -13,12 +17,17 @@
 <div class="container">
   <div class="w0"></div>
   <div class="w1"></div>
-  <button class="show-btn" type="button">Show anagram</button>
+  <button class="show-btn" type="button">Show Anagram</button>
   <div class="w2 no-glow"></div>
   <div class="w0"></div>
+  <div style="color: white;"> 
+    <input id="prev" type="button" onclick="location.href='?q=0';" value="Prev" />
+    <input id="next" type="button" onclick="location.href='?q=0';" value="Next" />
+  </div>
 </div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script  src="./script.js"></script>
+  <script src='./jquery.min.js'></script>
+  <script src="./script.js"></script>
 
 </body>
 </html>
